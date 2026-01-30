@@ -56,7 +56,7 @@ export default function TerminalInput({
           {/* Content Area */}
           <div className="p-6 md:p-8 space-y-6">
             <div className="space-y-2">
-              <h1 className="text-3xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-600 tracking-tighter filter drop-shadow-[0_0_10px_rgba(34,197,94,0.5)]">
+              <h1 className="text-3xl md:text-5xl font-bold text-transparent bg-clip-text bg-linear-to-r from-green-400 to-emerald-600 tracking-tighter filter drop-shadow-[0_0_10px_rgba(34,197,94,0.5)]">
                 IDENTITY PROTOCOL
               </h1>
               <p className="text-green-400/60 text-sm md:text-base flex items-center gap-2">

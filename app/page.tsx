@@ -4,6 +4,7 @@ import { useState } from "react";
 import TerminalInput from "@/components/TerminalInput";
 import RoastDisplay from "@/components/RoastDisplay";
 import GlowUpDisplay from "@/components/GlowUpDisplay";
+import AppInfo from "@/components/AppInfo";
 
 type AppState = "input" | "roast" | "glowup";
 
@@ -51,7 +52,8 @@ export default function Home() {
       }`}
     >
       {appState === "input" && (
-        <div className="flex items-center justify-center min-h-screen">
+        <div className="flex flex-col items-center justify-center min-h-screen py-20 overflow-y-auto">
+          <AppInfo />
           <TerminalInput onSubmit={handleInitialize} isLoading={isLoading} />
         </div>
       )}
