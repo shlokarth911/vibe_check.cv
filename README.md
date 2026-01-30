@@ -1,36 +1,41 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# VibeCheck.cv
 
-## Getting Started
+A dual-mode professional identity analyzer built for the AI Hackathon (Daytona).
+Featuring **Roast Mode** (Cyberpunk/Toxic) and **Glow-Up Mode** (Professional/Clean).
 
-First, run the development server:
+## Tech Stack
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- **Framework**: Next.js 15 (App Router)
+- **Styling**: Tailwind CSS v4, Shadcn/UI
+- **AI**: OpenAI SDK (Compatible with Siray.ai/CometAPI)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- **Infra**: Daytona
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Setup
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. **Clone & Install**
 
-## Learn More
+   ```bash
+   npm install
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. **Environment Variables**
+   Create a `.env.local` file:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```env
+   OPENAI_API_KEY=your_key_here
+   OPENAI_BASE_URL=https://api.openai.com/v1 # or Siray/Comet URL
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   ```
 
-## Deploy on Vercel
+3. **Run Development Server**
+   ```bash
+   npm run dev
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Features
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Terminal Input**: Paste your raw bio.
+- **Roast Mode**: Savage critique.
+- **Glow-Up Mode**: Professional rewrite and Ola.cv identity extraction.
+- **Export**: Download `profile.json` for .cv deployment.
