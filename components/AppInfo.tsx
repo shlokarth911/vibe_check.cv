@@ -84,7 +84,7 @@ export default function AppInfo() {
           <Shield className="w-4 h-4" /> PRIVACY_BY_DESIGN
         </div>
         <div className="flex items-center gap-2 text-white font-mono text-sm">
-          <Rocket className="w-4 h-4" /> POWERED_BY_GPT_5
+          <Rocket className="w-4 h-4" /> POWERED_BY_GEMINI_3
         </div>
         <div className="flex items-center gap-2 text-white font-mono text-sm">
           <Zap className="w-4 h-4" /> INSTANT_GLOWUP

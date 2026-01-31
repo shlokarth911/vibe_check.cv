@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { openai } from "@/lib/ai";
+import { geminiClient, GEMINI_MODEL } from "@/lib/ai";
 
 export async function POST(req: Request) {
   try {
@@ -11,7 +11,7 @@ export async function POST(req: Request) {
 
     const systemPrompt = `
     You are a dual-mode career identity engine.
-    You must perform three tasks on the user's input (Bio/Resume):
+    You must perform three tasks on the user's input (Bio/Resume/Profile URL):
     1. ROAST: Be a toxic Silicon Valley recruiter / Gordon Ramsay hybrid. Brutally roast their resume. Use caps, sarcasm, and tech slang. Be savage but funny.
     2. GLOW-UP: Be a top-tier Executive Brand Strategist. Rewrite their bio to be clean, premium, and impactful. Apple-style marketing copy.
     3. IDENTITY_AGENT: Extract structured data for a "faceless identity" platform.
@@ -29,16 +29,15 @@ export async function POST(req: Request) {
     }
     `;
 
-    const completion = await openai.chat.completions.create({
-      model: "gpt-5-nano", // Or compatible model via Siray/Comet
-      messages: [
-        { role: "system", content: systemPrompt },
-        { role: "user", content: text },
-      ],
-      response_format: { type: "json_object" },
+    const response = await geminiClient.models.generateContent({
+      model: GEMINI_MODEL,
+      contents: `${systemPrompt}\n\nUser Input:\n${text}`,
+      config: {
+        responseMimeType: "application/json",
+      },
     });
 
-    const content = completion.choices[0].message.content;
+    const content = response.text;
     const data = content ? JSON.parse(content) : null;
 
     if (!data) {

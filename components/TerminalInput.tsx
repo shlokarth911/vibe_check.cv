@@ -75,7 +75,7 @@ export default function TerminalInput({
               <Textarea
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder="// Enter bio, resume, or career summary..."
+                placeholder="// Enter bio, resume, profile URL, or career summary..."
                 className="min-h-[300px] pl-12 bg-transparent text-green-300 border-green-500/20 focus-visible:ring-1 focus-visible:ring-green-500/50 focus-visible:border-green-500/50 placeholder:text-green-700/50 text-base md:text-lg leading-relaxed resize-none rounded-md"
                 spellCheck={false}
               />
